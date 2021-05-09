@@ -6,16 +6,16 @@ import ProductoLista from './ProductoLista';
 
 
 export default function Producto() {
-    const margin = {
-        margin: "1rem"
-    }
-    
 
+ // mejorar usando flexbox
 
     return (
         <container>
+            <br />
             <ProductoLista />
+            <br />
             <ProductoCRUD />
+            <br />
         </container>
     );
 
