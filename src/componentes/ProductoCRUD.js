@@ -18,6 +18,7 @@ export default class ProductoCRUD extends Component {
 
     // limpia la forma en la que las partes forman el estado inicial
     initialState = {
+        idProducto : '',
         nombre : '',
         categoria : '',
         proveedor : '',
@@ -36,6 +37,7 @@ export default class ProductoCRUD extends Component {
 
         // crea un objeto json del formulario para el POST
         const producto = {
+            id: this.state.idProducto,
             nombre: this.state.nombre,
              categoria: this.state.categoria,
              proveedor:  this.state.proveedor,
@@ -72,7 +74,7 @@ export default class ProductoCRUD extends Component {
         return (
             <div>
                 <div style={{"display": this.state.show ? "block" : "none"}}>
-                    <ToastMensaje children = {{show:this.state.show, message: "Producto guardado correctamente."}}/>
+                    <ToastMensaje children = {{show:this.state.show, message: "Producto guardado correctamente.", type: "success"}}/>
                 </div>
                 
             

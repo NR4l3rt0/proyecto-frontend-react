@@ -14,7 +14,10 @@ export default class ToastMensaje extends Component {
 
         return (
             <div style={this.props.children.show ? estilosMsg : null}>
-                <Toast className={"border border-success bg-success text-white"} show={this.props.children.show}>
+                <Toast className={`border text-white ${this.props.children.type === "success" ? 
+                                    "border-success bg-success" :
+                                    "border-danger bg-danger"}`} 
+                                    show={this.props.children.show}>
                     <Toast.Header className={"bg-muted text-dark"} closeButton={false}>
                         <strong className="mr-auto">
                             ¡Genial!
