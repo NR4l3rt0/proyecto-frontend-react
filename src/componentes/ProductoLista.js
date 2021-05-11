@@ -53,6 +53,10 @@ export default class ProductoLista extends Component {
 
     };
 
+
+
+
+
     render(){
 
 
@@ -60,7 +64,7 @@ export default class ProductoLista extends Component {
 
             <div>
                 <div style={{"display": this.state.show ? "block" : "none"}}>
-                    <ToastMensaje children = {{show:this.state.show, message: "Producto eliminado correctamente.", type: "danger"}}/>
+                    <ToastMensaje show = {this.state.show} message = {"Producto eliminado correctamente."} type= {"danger"}/>
                 </div>         
                 <Card className="border border-dark bg-dark text-white">
                     <Card.Header><FontAwesomeIcon icon={faList} /> Lista de productos</Card.Header>

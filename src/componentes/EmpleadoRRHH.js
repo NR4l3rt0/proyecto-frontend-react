@@ -1,11 +1,7 @@
 import React from 'react';
 
-import {Jumbotron, Container, Row} from 'react-bootstrap';
-import HacerPedido from './HacerPedido';
-import Lista from './Lista';
 
-
-function EmpleadoRRHH() {
+export default function EmpleadoRRHH() {
     const margin = {
         margin: "1rem"
     }
@@ -21,5 +17,3 @@ function EmpleadoRRHH() {
 }
 
 
-
-export default EmpleadoRRHH;

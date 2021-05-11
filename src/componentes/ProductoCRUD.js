@@ -14,7 +14,7 @@ export default class ProductoCRUD extends Component {
         this.state.show = false;                                // controla el estado del toast
         this.productoChange = this.productoChange.bind(this);
         this.submitProducto = this.submitProducto.bind(this);
-    }
+    };
 
     // limpia la forma en la que las partes forman el estado inicial
     initialState = {
@@ -30,7 +30,7 @@ export default class ProductoCRUD extends Component {
     // llama al estado inicial
     resetProducto = () =>{
         this.setState(() => this.initialState);
-    }
+    };
 
     submitProducto = event => {
         event.preventDefault();
@@ -74,7 +74,7 @@ export default class ProductoCRUD extends Component {
         return (
             <div>
                 <div style={{"display": this.state.show ? "block" : "none"}}>
-                    <ToastMensaje children = {{show:this.state.show, message: "Producto guardado correctamente.", type: "success"}}/>
+                    <ToastMensaje show = {this.state.show} message = {"Producto guardado correctamente."} type = {"success"}/>
                 </div>
                 
             
@@ -159,8 +159,8 @@ export default class ProductoCRUD extends Component {
                             <FontAwesomeIcon icon={faSave} />   Guardar
                         </Button> {' '}
                         <Button size= "sm" variant="info" type="reset">
-                        <FontAwesomeIcon icon={faUndo} />   Reset
-                            </Button>
+                            <FontAwesomeIcon icon={faUndo} />   Reset
+                        </Button>
                         </Card.Footer>
                     </Form> 
                 </Card>
