@@ -1,15 +1,15 @@
 import React from 'react';
+import EmpleadoRRHH from './EmpleadoRRHH';
 
-
-
-function Analytics() {
+export default function Analytics() {
 
     
 
 
     return (
-
-        <div>analytics</div>
+        <div>   
+            <EmpleadoRRHH />
+        </div>
 
     );
 
@@ -17,4 +17,3 @@ function Analytics() {
 
 
 
-export default Analytics;

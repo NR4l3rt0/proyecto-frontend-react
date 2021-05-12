@@ -1,24 +1,25 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ProductoCRUD from './ProductoCRUD';
 import ProductoLista from './ProductoLista';
 
 
 
 
-export default function Producto() {
+export default class Producto extends Component {
 
+    render(){
  // mejorar usando flexbox
 
-    return (
-        <container>
-            <br />
-            <ProductoLista />
-            <br />
-            <ProductoCRUD />
-            <br />
-        </container>
-    );
-
+        return (
+            <div>
+                <br />
+                <ProductoLista />
+                <br />
+                <ProductoCRUD />
+                <br />
+            </div>
+        );
+    }
 }
 
 

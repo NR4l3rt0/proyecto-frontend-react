@@ -1,36 +1,26 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-export default class EmpleadoRRHH extends Component {
+export default class InfoClientes extends Component {
 
     constructor(props){
         super(props);
         this.state = {
-            empleados : [], 
             clientes : []                
         };
     }
     
     componentDidMount() {
-        this.findAllEmpleados();
         this.findAllClientes();
-        console.log(this.state.empleados);
-        console.log(this.state.clientes);
+
     }
 
     componentDidUpdate() {
-        this.findAllEmpleados();
         this.findAllClientes();
     }
 
-    findAllEmpleados(){
-        axios.get("http://localhost:8081/rrhh/empleados")
-             .then(response => response.data)
-             .then(data => {
-                 this.setState({empleados : data});
-             });
              
-    };
+ 
 
     findAllClientes(){
         axios.get("http://localhost:8081/crm/clientes")
@@ -50,11 +40,8 @@ export default class EmpleadoRRHH extends Component {
 
                 <div>
                     <ul>
-                   {this.state.empleados.map(empleado => (<li>{empleado.hobby}</li>))}
-                 </ul>
-
-
-
+                        {this.state.clientes.map(empleado => (<li>{empleado.hobby}</li>))}
+                    </ul>
                 </div>
 
         );

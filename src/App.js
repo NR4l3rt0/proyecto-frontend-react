@@ -11,7 +11,8 @@ import Footer from './componentes/Footer';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
-function App() {
+
+export default function App() {
   return (
     
   /* Y dentro de cada uno otra vez enroutar 
@@ -31,9 +32,3 @@ function App() {
     </Router>
   );
 }
-
-
-
-
-
-export default App;

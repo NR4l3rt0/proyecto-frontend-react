@@ -33,7 +33,6 @@ export default class ClienteCRM extends Component {
                 <PedidoClienteSaludo nombre= {nombre} />
                 <ProductoListaFiltradaCliente />
                 <PedidoClienteFormulario nroSocio = {nroSocio} email= {email}/>
-    
             </div>
     
 
