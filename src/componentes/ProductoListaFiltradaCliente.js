@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 
-import {Card, Table, ButtonGroup, Button} from 'react-bootstrap';
+import {Card, Table} from 'react-bootstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faList, faEdit, faTrash} from '@fortawesome/free-solid-svg-icons';
-import ToastMensaje from './ToastMensaje';
+import {faList} from '@fortawesome/free-solid-svg-icons';
+
 import axios from 'axios';
 
 export default class ProductoListaFiltradaCliente extends Component {

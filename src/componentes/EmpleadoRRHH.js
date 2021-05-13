@@ -6,22 +6,19 @@ export default class EmpleadoRRHH extends Component {
     constructor(props){
         super(props);
         this.state = {
-            empleados : [], 
-            clientes : []                
+            empleados : []              
         };
     }
     
     componentDidMount() {
         this.findAllEmpleados();
-        this.findAllClientes();
-        console.log(this.state.empleados);
-        console.log(this.state.clientes);
+        
+
     }
 
-    componentDidUpdate() {
+   /* componentDidUpdate() {
         this.findAllEmpleados();
-        this.findAllClientes();
-    }
+    }*/
 
     findAllEmpleados(){
         axios.get("http://localhost:8081/rrhh/empleados")
@@ -29,17 +26,8 @@ export default class EmpleadoRRHH extends Component {
              .then(data => {
                  this.setState({empleados : data});
              });
-             
     };
 
-    findAllClientes(){
-        axios.get("http://localhost:8081/crm/clientes")
-             .then(response => response.data)
-             .then(data => {
-                 this.setState({clientes : data});
-             });
-             
-    };
 
 
 
