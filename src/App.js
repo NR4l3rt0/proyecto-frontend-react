@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 
 import BarraNavegacion from './componentes/BarraNavegacion';
 import Producto from './componentes/Producto';
@@ -11,17 +10,19 @@ import Footer from './componentes/Footer';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
-
+/** 
+ * Clase padre de toda la parte del frontend. 
+ * Se trata de un componente funcional que se apoya en un enrutamiento de path.
+ * Dependiendo de la elección que se haga en la barra de navegación, se cargará 
+ * uno u otro componente.
+ */ 
 export default function App() {
   return (
     
-  /* Y dentro de cada uno otra vez enroutar 
-
-  */ 
     <Router>
       <BarraNavegacion sticky="top"/> 
         <Switch>
-        <Route path="/" exact component={Home}/> 
+          <Route path="/" exact component={Home}/> 
           <Route path="/area-cliente" exact component={ClienteCRM}/>
           <Route path="/productos" exact component={Producto}/>
           <Route path="/empleados" exact component={EmpleadoRRHH}/>

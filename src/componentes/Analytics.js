@@ -2,6 +2,10 @@ import React from 'react';
 import GraficoSalarioEmp from './GraficoSalarioEmp';
 import GraficoPieGenero from './GraficoPieGenero';
 
+/**
+ * Se encarga de cargar los dos gráficos y pasarlo a 'App', que es enviado a 'index.js'.
+ * Digamos que sería el 'cuadro' de ellos.
+ */
 export default function Analytics() {
 
     const estiloCabecera = {

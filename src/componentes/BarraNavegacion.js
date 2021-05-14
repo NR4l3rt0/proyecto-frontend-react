@@ -2,7 +2,11 @@ import React, {Component} from 'react';
 import {Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
-
+/**
+ * Esta clase se encarga de enlazar cada link con el path correspondiente.
+ * Por tanto, apoya a App.js para que esta última aporte el componente 
+ * requerido.
+ */
 export default class BarraNavegacion extends Component {
 
     render(){

@@ -2,10 +2,18 @@ import React, {Component} from 'react';
 
 import {Card, Table} from 'react-bootstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faList} from '@fortawesome/free-solid-svg-icons';
+import {faList} from '@fortawesome/free-solid-svg-icons'; 
 
 import axios from 'axios';
 
+/**
+ * Se trata de una clase filtrada para el uso del cliente. Es un apoyo visual a la hora de realizar
+ * el pedido.
+ * En un futuro podría convertirse en un conglomerado dinámico de imágenes por las que el cliente 
+ * pudiera indagar.
+ * Se apoya de una llamada a la API producto, de la cual toma la información y se modifica rápidamente
+ * debido a que se invoca al método tanto en el montaje del componente como  cuando se actualiza.
+ */
 export default class ProductoListaFiltradaCliente extends Component {
 
     constructor(props){

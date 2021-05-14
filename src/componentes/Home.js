@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Image} from 'react-bootstrap';
 
-
+// página de inicio, tiene una imagen y una cita.
 function Home() {
     const margin = {
         margin: "1rem"

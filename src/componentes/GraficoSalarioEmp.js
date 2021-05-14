@@ -2,6 +2,11 @@ import React, {Component} from 'react';
 import { Bar } from 'react-chartjs-2';
 import axios from 'axios';
 
+/**
+ * Renderiza un gráfico tipo barras con la información existente en la base
+ * de datos. De ser modificada se verá afectado el gráfico.
+ * También permitiría una entrada negativa y podrían aumentarse las variables.
+ */
 export default class GraficoSalarioEmp extends Component {
 
     constructor(props){
@@ -27,6 +32,8 @@ export default class GraficoSalarioEmp extends Component {
 
 
     render(){
+
+        // Se extraen los arrays necesarios manipulados
         const {empleados} = this.state;
         const infoEmpleado = empleados.map(empleado => empleado.nroEmpleado + " " + empleado.nombre);
         const salario = empleados.map(empleado => empleado.salario);
@@ -38,7 +45,7 @@ export default class GraficoSalarioEmp extends Component {
 
                 <Bar 
                     data = {{
-                        labels: infoEmpleado,
+                        labels: infoEmpleado ,
                         datasets:  [{
                                 label: 'Salario',
                                 data:  salario,

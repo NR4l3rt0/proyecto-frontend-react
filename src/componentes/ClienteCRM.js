@@ -4,7 +4,12 @@ import ProductoListaFiltradaCliente from './ProductoListaFiltradaCliente';
 import PedidoClienteSaludo from './PedidoClienteSaludo';
 import PedidoClienteFormulario from './PedidoClienteFormulario';
 
-
+/**
+ * Esta clase se plantea como una fuente principal de análisis.
+ * Se debe mejorar la relación con Hibernate para que se produzca un enlace 
+ * natural con los pedidos.
+ * Otra opción sería realizar una vista desde la BBDD (PostgreSQL en este caso)
+ */
 export default class ClienteCRM extends Component {
 
     constructor(props){
@@ -27,6 +32,7 @@ export default class ClienteCRM extends Component {
 
         const {nroSocio, nombre, email} = this.initialState;
 
+        // Aunque el proyecto es una SPA, se deja junto por simplicidad expositiva
         return (
 
             <div>

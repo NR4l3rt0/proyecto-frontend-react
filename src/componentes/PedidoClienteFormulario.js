@@ -7,6 +7,12 @@ import ToastMensaje from './ToastMensaje';
 import axios from 'axios';
 import {v4 as uuidv4} from 'uuid';
 
+/**
+ * Aunque es capaz de enviar un pedido y que se registre en la BBDD, aún está incompleta según lo 
+ * que se tenía previsto.
+ * Se debería estudiar mejor el enlace con el cliente y cómo se podría interactuar con otras partes
+ * del software.
+ */
 export default class PedidoClienteFormulario extends Component {
 
     constructor(props){
@@ -18,7 +24,7 @@ export default class PedidoClienteFormulario extends Component {
         this.submitPedido = this.submitPedido.bind(this);
     };
 
-    // limpia la forma en la que las partes forman el estado inicial
+    // limpia los campos para que vuelva al estado inicial cada propiedad
     initialState = {
         nroSocio : this.props.nroSocio,
         email : this.props.email,
@@ -55,6 +61,7 @@ export default class PedidoClienteFormulario extends Component {
         event.preventDefault();
 
         // crea un objeto json del formulario para el POST
+        // HAY QUE PRESTAR ESPECIAL ATENCIÓN a que se pasan objetos dentro del objeto pedido.
         const pedido = {
             ClienteCRM : {
                 nroSocio : this.state.nroSocio
@@ -68,12 +75,14 @@ export default class PedidoClienteFormulario extends Component {
 
         };
 
-        alert(pedido.ClienteCRM.nroSocio + " - " +
-                pedido.email + " - " + pedido.idPedidoCliente 
-                    + pedido.producto.idProducto + " - " + pedido.producto.cantidad);
 
-        /*Envía un mensaje, y en la respuesta establece el valor del estado del mensaje Toast
-         * Si apareciera, se oculta el mensaje automáticamente a los 3 segundos
+
+        /**
+         * HTTP -> POST
+         * Mensaje informativo.
+         * Establece el valor del estado del mensaje Toast
+         * Si apareciera, se oculta automáticamente a los 3000 milisegundos.
+         * En el método post se pasa la URL con el objeto.
          */
         axios.post("http://localhost:8081/area-cliente/mis-pedidos", pedido)
                 .then(response => {
@@ -102,6 +111,8 @@ export default class PedidoClienteFormulario extends Component {
 
         
 
+        // Se han tratado de usar otras características con respecto al otro formulario.
+        // Por ejemplo el readOnly.
         return (
             <div>
                 <div style={{"display": this.state.show ? "block" : "none"}}>

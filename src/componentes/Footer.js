@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
 
-import {Navbar, Col, Container, Row} from 'react-bootstrap';
+import { Navbar, Col, Container } from 'react-bootstrap';
 
+/**
+ * Este componente expone la información que se ve en el footer en cada "página"
+ * Se realiza un cálculo sencillo de alguna variable
+ */
 export default  class Footer extends Component {
 
     render(){

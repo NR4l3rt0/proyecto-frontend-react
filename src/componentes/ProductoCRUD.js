@@ -6,6 +6,11 @@ import {faSave, faPlusSquare, faUndo} from '@fortawesome/free-solid-svg-icons';
 import ToastMensaje from './ToastMensaje';
 import axios from 'axios';
 
+/**
+ * Acompaña en funcionalidad a ProductoLista, aquí se permite crear un producto que será renderizado
+ * al momento (y modificado allá donde esté si aquello tiene la opción de actualizarse).
+ * Hay que prestar especial atención al enlace (BINDING) entre MÉTODOS y los EVENTOS.
+ */
 export default class ProductoCRUD extends Component {
 
     constructor(props){
@@ -32,10 +37,12 @@ export default class ProductoCRUD extends Component {
         this.setState(() => this.initialState);
     };
 
+    // Ayudado del objeto event, hace que no se recargue la página automáticamente al enviar
+    // el formulario. Establece el estado de cada propiedad a ser enviada.
     submitProducto = event => {
         event.preventDefault();
 
-        // crea un objeto json del formulario para el POST
+        // crea un objeto json 'producto', resultado del formulario para el POST
         const producto = {
             id: this.state.idProducto,
             nombre: this.state.nombre,
@@ -46,7 +53,8 @@ export default class ProductoCRUD extends Component {
              precio:  this.state.precio
         };
 
-        /*Envía un mensaje, y en la respuesta establece el valor del estado del mensaje Toast
+        /*
+         * Envía un mensaje, y en la respuesta establece el valor del estado del mensaje Toast
          * Si apareciera, se oculta el mensaje automáticamente a los 3 segundos
          */
         axios.post("http://localhost:8081/stock/productos", producto)
@@ -68,7 +76,7 @@ export default class ProductoCRUD extends Component {
     };
 
     render(){
-        // limpia el código, evitando tener que repetir el prefifo 'this.state' a cada prop
+        // limpia el código, evitando tener que repetir el prefijo 'this.state' a cada prop
         const {nombre, categoria, proveedor, fechaCaducidad, cantidad, precio} = this.state;
 
         return (

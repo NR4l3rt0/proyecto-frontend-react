@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import {Jumbotron, Container} from 'react-bootstrap';
 
-
+/**
+ * Envía un mensaje de bienvenida al usuario en su página personal, podrá pensarse como
+ * un prop que será enviado por el padre ("hacia abajo") cuando el usuario se loguee.
+ */
 export default class PedidoClienteSaludo extends Component {
 
     constructor(props){
