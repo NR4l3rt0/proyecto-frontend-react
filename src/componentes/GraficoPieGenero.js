@@ -28,7 +28,7 @@ export default class GraficoPieGenero extends Component {
  
 
     findAllEmpleados(){
-        axios.get("http://localhost:8081/rrhh/empleados")
+        axios.get("https://jubiter.herokuapp.com/rrhh/empleados")
              .then(response => response.data)
              .then(data => {
                  this.setState({empleados : data});
@@ -67,8 +67,8 @@ export default class GraficoPieGenero extends Component {
                         labels: ['Hombres', 'Mujeres'],
                         datasets:  [{
                             label: 'Genero',
-                            data:  [porcentaje(mujeres), 
-                                    porcentaje(hombres)],
+                            data:  [porcentaje(hombres), 
+                                    porcentaje(mujeres)],
                             backgroundColor: ['red', 'blue'],
                             
                             borderColor: 

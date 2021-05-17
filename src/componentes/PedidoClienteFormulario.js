@@ -44,8 +44,10 @@ export default class PedidoClienteFormulario extends Component {
         this.findAllProductos();
     }
 
+
+
    findAllProductos(){
-        axios.get("http://localhost:8081/stock/productos")
+        axios.get("https://jubiter.herokuapp.com/stock/productos")
              .then(response => response.data)
              .then(data => {
                  this.setState({productos : data});
@@ -84,7 +86,7 @@ export default class PedidoClienteFormulario extends Component {
          * Si apareciera, se oculta automáticamente a los 3000 milisegundos.
          * En el método post se pasa la URL con el objeto.
          */
-        axios.post("http://localhost:8081/area-cliente/mis-pedidos", pedido)
+        axios.post("https://jubiter.herokuapp.com/area-cliente/mis-pedidos", pedido)
                 .then(response => {
                     if(response.data != null) {
                         this.setState({"show": true});

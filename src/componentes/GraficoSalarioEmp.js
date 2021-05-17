@@ -22,8 +22,9 @@ export default class GraficoSalarioEmp extends Component {
     }
 
 
+
     findAllEmpleados(){
-        axios.get("http://localhost:8081/rrhh/empleados")
+        axios.get("https://jubiter.herokuapp.com/rrhh/empleados")
              .then(response => response.data)
              .then(data => {
                  this.setState({empleados : data});

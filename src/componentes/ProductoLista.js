@@ -30,7 +30,7 @@ export default class ProductoLista extends Component {
 
     // Usando axios como cliente HTTP, toma del GET una lista de productos y establece el estado.
    findAllProductos(){
-        axios.get("http://localhost:8081/stock/productos")
+        axios.get("https://jubiter.herokuapp.com/stock/productos")
              .then(response => response.data)
              .then(data => {
                  this.setState({productos : data});
@@ -44,7 +44,7 @@ export default class ProductoLista extends Component {
      * @param {*} productoId 
      */
     deleteProducto = (productoId) => { 
-        axios.delete("http://localhost:8081/stock/productos/" + productoId)
+        axios.delete("https://jubiter.herokuapp.com/stock/productos/" + productoId)
             .then(response => {
                 if(response.data != null){
                     this.setState({"show": true});
@@ -65,6 +65,14 @@ export default class ProductoLista extends Component {
             });
 
     };
+
+    /**
+     * Envía un mensaje al usuario
+     */
+    editarProducto = () => {
+        alert("¡Oops! Lo sentimos, parece que el botón no sabe cómo editar aún...");
+    };
+
 
 
 
@@ -118,7 +126,7 @@ export default class ProductoLista extends Component {
                                             <td>{producto.precio}</td>
                                             <td>
                                                 <ButtonGroup>
-                                                    <Button size="sm" variant= "outline-primary"><FontAwesomeIcon icon={faEdit} /></Button>
+                                                    <Button size="sm" variant= "outline-primary" onClick={this.editarProducto.bind(this)}><FontAwesomeIcon icon={faEdit} /></Button>
                                                     <Button size="sm" variant= "outline-danger" onClick={this.deleteProducto.bind(this, producto.idProducto)}><FontAwesomeIcon icon={faTrash} /></Button>
                                                 </ButtonGroup>
                                             </td>

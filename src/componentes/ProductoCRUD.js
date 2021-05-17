@@ -53,11 +53,14 @@ export default class ProductoCRUD extends Component {
              precio:  this.state.precio
         };
 
+
+
+        
         /*
          * Envía un mensaje, y en la respuesta establece el valor del estado del mensaje Toast
          * Si apareciera, se oculta el mensaje automáticamente a los 3 segundos
          */
-        axios.post("http://localhost:8081/stock/productos", producto)
+        axios.post("https://jubiter.herokuapp.com/stock/productos", producto)
                 .then(response => {
                     if(response.data != null) {
                         this.setState({"show": true});

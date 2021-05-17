@@ -33,7 +33,7 @@ export default class ProductoListaFiltradaCliente extends Component {
     }
 
    findAllProductos(){
-        axios.get("http://localhost:8081/stock/productos")
+        axios.get("https://jubiter.herokuapp.com/stock/productos")
              .then(response => response.data)
              .then(data => {
                  this.setState({productos : data});
